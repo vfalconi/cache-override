@@ -55,7 +55,8 @@ http://domain.tld/assets/css/1420665809.styles.min.css
 ```
 
 ## Notes
-1. If the `path` parameter points to a non-existent file, the resultant request will (most likely) fail. I decided to keep this behavior in place, rather than have the plugin default to the original filename, as a way to gently push you to make sure you're using the cache-busted version of your file.
+1. I've only tested this on EE 2.9.2, but I don't imagine it breaking on anything from 2.5 and up.
+2. If the `path` parameter points to a non-existent file, the resultant request will (most likely) fail. I decided to keep this behavior in place, rather than have the plugin default to the original filename, as a way to gently push you to make sure you're using the cache-busted version of your file.
 
 ## Learn more about cache busting:
 - The why behind this: http://www.stevesouders.com/blog/2008/08/23/revving-filenames-dont-use-querystring
