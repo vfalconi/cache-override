@@ -1,6 +1,6 @@
 # cachebuster
 
-CacheBuster is an EE plugin that appends a request's filename with a timestamp and an optional string.
+An EE plugin for generating cache-busting URLs
 
 Requirements:
 - ExpressionEngine 2.9 (See notes below)
