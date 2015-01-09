@@ -8,12 +8,12 @@ CacheBuster is an EE plugin that appends a request's filename with a timestamp a
 - `path` &mdash; URL path to the file, including filename and extension. This will be scrubbed in the process, so you can start it with a leading slash or a dot-slash if you want, it will end up just fine.
 
 **Optional**
-- `pattern` (Default: `{f}.{t}.{e}`) &mdash; string (with placeholders) to determine what your new filename will look like. Placeholders include:
+- `pattern` &mdash; Default: `{f}.{t}.{e}`; a string (with placeholders) to determine what your new filename will look like. Placeholders include:
     + `{t}` - timestamp
     + `{f}` - filename (without extension)
     + `{e}` - extension (without preceding dot)
 
-- `absolute_path` (Default: `false`) &mdash; If set to `true`, the output will be just like EE's own [`{path}` variable](https://ellislab.com/expressionengine/user-guide/templates/globals/path.html), but will include your timestamp and optional prepended string.
+- `absolute_path` &mdash; Default: `false`; if set to `true`, the output will be just like EE's own [`{path}` variable](https://ellislab.com/expressionengine/user-guide/templates/globals/path.html), but will include your timestamp and optional prepended string.
 
 ## Examples
 
