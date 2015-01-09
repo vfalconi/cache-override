@@ -17,7 +17,7 @@ Requirements:
     + `{f}` - filename (without extension)
     + `{e}` - extension (without preceding dot)
 
-- `absolute_path` &mdash; Default: `false`; if set to `true`, the output will be just like EE's own [`{path}` variable](https://ellislab.com/expressionengine/user-guide/templates/globals/path.html), but will include your timestamp and optional prepended string.
+- `absolute_url` &mdash; Default: `false`; if set to `true`, the output will be just like EE's own [`{path}` variable](https://ellislab.com/expressionengine/user-guide/templates/globals/path.html), but will include your timestamp and optional prepended string.
 
 ## Examples
 
@@ -46,7 +46,7 @@ assets/css/v-1420665809.styles.min.css
 ### Absolute URL Parameter
 
 ```
-{exp:cachebuster path="/assets/css/styles.min.css" absolute_path="true"}
+{exp:cachebuster path="/assets/css/styles.min.css" absolute_url="true"}
 ```
 
 Output:
