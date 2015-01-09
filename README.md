@@ -2,6 +2,10 @@
 
 CacheBuster is an EE plugin that appends a request's filename with a timestamp and an optional string.
 
+Requirements:
+- ExpressionEngine 2.9 (See notes below)
+- A server with URL rewrites enabled (for more information on this, see "Learn More" below)
+
 ## Parameters
 
 **Required**
@@ -50,6 +54,10 @@ Output:
 http://domain.tld/assets/css/1420665809.styles.min.css
 ```
 
+## Notes
+1. If the `path` parameter points to a non-existent file, the resultant request will (most likely) fail. I decided to keep this behavior in place, rather than have the plugin default to the original filename, as a way to gently push you to make sure you're using the cache-busted version of your file.
+
 ## Learn more about cache busting:
-- http://www.stevesouders.com/blog/2008/08/23/revving-filenames-dont-use-querystring
-- https://github.com/h5bp
+- The why behind this: http://www.stevesouders.com/blog/2008/08/23/revving-filenames-dont-use-querystring
+- URL rewrites with Apache: http://httpd.apache.org/docs/current/mod/mod_rewrite.html
+- URL rewrites with IIS: http://www.iis.net/learn/extensions/url-rewrite-module/using-the-url-rewrite-module
