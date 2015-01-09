@@ -11,15 +11,15 @@
  */
 
 $plugin_info = array(
-	'pi_name'         => 'CacheBuster',
+	'pi_name'         => 'cachebuster',
 	'pi_version'      => '1.0',
 	'pi_author'       => 'Vince Falconi',
 	'pi_author_url'   => 'https://www.vincefalconi.com',
 	'pi_description'  => 'Cachebust an asset request by rewriting the filename to include a timestamp based on the file\'s last modified time.',
-	'pi_usage'        => CacheBuster::usage()
+	'pi_usage'        => cachebuster::usage()
 );
 
-class CacheBuster
+class cachebuster
 {
 
 	public $return_data = '';
