@@ -37,25 +37,48 @@ class CacheBuster
 	{
 
 		$path = ee()->TMPL->fetch_param('path');
+		$pattern = ee()->TMPL->fetch_param('pattern');
 
 		// cleanup the path a little bit
 		$path = trim($path, './');
 
+		// break up the path segments
 		$segments = explode('/', $path);
 
+		// grab the asset's filename + extension
 		$file = $segments[count($segments) - 1];
 
+		// create the file's timestamp based on its last-modified-time
 		$timestamp = filemtime($path);
 
-		$file = $timestamp . '.' . $file;
+		// get the extension of the file, without the accompanying dot
+		preg_match('/\.([A-Za-z]+)$/', $file, $matches);
+		$extension = trim($matches[0], '.');
 
-		if (ee()->TMPL->fetch_param('prepend'))
+		// get the basename of the file
+		$basename = substr($file, 0, strlen($basename) - strlen($extension));
+		$basename = trim($basename, '.');
+
+		// create the new filename using the supplied pattern
+		// if no pattern, default to `{f}.{t}.{e}`
+
+		if ($pattern == '')
 		{
-			$file = ee()->TMPL->fetch_param('prepend') . $file;
+			$pattern = '{f}.{t}.{e}';
 		}
 
-		$segments[count($segments) - 1] = $file;
+		// REGEX YOU ARE MY LOVAH
+		$variables[0] = '/\{t\}/';
+    $variables[1] = '/\{f\}/';
+    $variables[2] = '/\{e\}/';
 
+    $values[0] = $timestamp;
+    $values[1] = $basename;
+    $values[2] = $extension;
+		
+		$segments[count($segments) - 1] = preg_replace($variables, $values, $pattern);
+
+		// rebuild URL
 		$path = implode('/', $segments);
 		
 		if (ee()->TMPL->fetch_param('absolute_path') == 'true')
