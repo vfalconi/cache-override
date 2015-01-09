@@ -26,7 +26,7 @@ Output:
 assets/css/1420665809.styles.min.css
 ```
 
-### Absolute URL
+### Absolute URL Parameter
 
 ```
 {exp:cachebuster path="/assets/css/styles.min.css" absolute_path="true"}
@@ -37,7 +37,9 @@ Output:
 http://domain.tld/assets/css/1420665809.styles.min.css
 ```
 
-### String prepended to timestamped filename
+### Prepend parameter
+
+Prepend a string to timestamped filename
 
 ```
 {exp:cachebuster path="./assets/css/styles.min.css" prepend="v-"}
@@ -48,6 +50,10 @@ Output:
 assets/css/v-1420665809.styles.min.css
 ```
 
-## Learn more:
+### Pattern parameter
+
+Specify what you want the output filename to look like using `{t}` as a placeholder for the timestamp, `{f}` as a placeholder for the filename, and `{e}` as a placeholder for the file's extension.
+
+## Learn more about cache busting:
 - http://www.stevesouders.com/blog/2008/08/23/revving-filenames-dont-use-querystring
 - https://github.com/h5bp
