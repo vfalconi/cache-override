@@ -80,8 +80,9 @@ class CacheBuster
 
 		// rebuild URL
 		$path = implode('/', $segments);
-		
-		if (ee()->TMPL->fetch_param('absolute_path') == 'true')
+
+		// if the `absolute_url` parameter is set to true, oblige the request
+		if (ee()->TMPL->fetch_param('absolute_url') == 'true')
 		{
 			$path = ee()->functions->create_url($path);
 		}
