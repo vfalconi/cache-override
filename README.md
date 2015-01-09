@@ -1,6 +1,6 @@
 # cachebuster
 
-CacheBuster is an EE plugin that will append a request's filename with a timestamp.
+CacheBuster is an EE plugin that appends a request's filename with a timestamp and an optional string.
 
 ## Parameters
 
