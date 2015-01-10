@@ -35,7 +35,7 @@ assets/css/1420665809.styles.min.css
 ### Pattern parameter
 
 ```
-{exp:cachebuster path="assets/css/styles.min.css" pattern="v-{t}.{f}.{e}"}
+{exp:cachebuster path="/assets/css/styles.min.css" pattern="v-{t}.{f}.{e}"}
 ```
 
 Output:
@@ -46,7 +46,7 @@ assets/css/v-1420665809.styles.min.css
 ### Absolute URL Parameter
 
 ```
-{exp:cachebuster path="/assets/css/styles.min.css" absolute_url="true"}
+{exp:cachebuster path="./assets/css/styles.min.css" absolute_url="true"}
 ```
 
 Output:
