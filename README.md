@@ -4,15 +4,11 @@ An EE plugin for generating cache-busting URLs.
 
 cachebuster allows you a flexible means of adding a cache-busting timestamp to your assets, using a customizable pattern parameter.
 
-Unlike adding a query string to the asset's URL, "[revving the filename](http://www.stevesouders.com/blog/2008/08/23/revving-filenames-dont-use-querystring)" allows proxy browsers to cache the file while allowing you to override outdated cached versions.
+cachebuster works a lot like EE's built-in {path} variable in that it outputs a URL based on the provided path, but it comes with a few extra features:
 
-cachebuster's pattern parameter grants you the freedom to rewrite your asset's filename however you and your team have decided in your server's URL rewrite rules. You can be as general or as granular as you want, in this regard.
-
-Finally, cachebuster can rewrite any the filename of any type of file, not just CSS or JavaScript. It merely outputs a URL, not an HTML element, so this plugin works anywhere you need a cache-busted URL.
-
-Requirements:
-- ExpressionEngine 2.9 (See notes below)
-- A server with URL rewrites enabled (for more information on this, see "Learn More" below)
+- Using the pattern parameter, you can define how the filename should be rewritten. This also allows you to employ [the "revving the filename"](http://www.stevesouders.com/blog/2008/08/23/revving-filenames-dont-use-querystring) technique, placing the timestamp as part of the filename itself, instead of in a query string on the end of the URL.
+- The absolute_url parameter gives you the option of an absolute URL (because let's face it, some of us just prefer absolute URLs). (Note: the absolute URL will be based on what you've set as the site URL in your EE configuration.)
+- Because cachebuster's output is only the URL, it can be used to rewrite the filename of any asset you need to cache-bust—CSS, JavaScript, images, JSON, whatever.
 
 ## Parameters
 
