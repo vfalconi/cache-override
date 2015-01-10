@@ -1,6 +1,14 @@
 # cachebuster
 
-An EE plugin for generating cache-busting URLs
+An EE plugin for generating cache-busting URLs.
+
+cachebuster allows you a flexible means of adding a cache-busting timestamp to your assets, using a customizable pattern parameter.
+
+Unlike adding a query string to the asset's URL, "[revving the filename](http://www.stevesouders.com/blog/2008/08/23/revving-filenames-dont-use-querystring)" allows proxy browsers to cache the file while allowing you to override outdated cached versions.
+
+cachebuster's pattern parameter grants you the freedom to rewrite your asset's filename however you and your team have decided in your server's URL rewrite rules. You can be as general or as granular as you want, in this regard.
+
+Finally, cachebuster can rewrite any the filename of any type of file, not just CSS or JavaScript. It merely outputs a URL, not an HTML element, so this plugin works anywhere you need a cache-busted URL.
 
 Requirements:
 - ExpressionEngine 2.9 (See notes below)
