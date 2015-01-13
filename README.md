@@ -1,14 +1,14 @@
-# cachebuster
+# Cache Override
 
 An EE plugin for generating cache-busting URLs.
 
-cachebuster allows you a flexible means of adding a cache-busting timestamp to your assets, using a customizable pattern parameter.
+Cache Override allows you a flexible means of adding a cache-busting timestamp to your assets, using a customizable pattern parameter.
 
-cachebuster works a lot like EE's built-in {path} variable in that it outputs a URL based on the provided path, but it comes with a few extra features:
+Cache Override works a lot like EE's built-in {path} variable in that it outputs a URL based on the provided path, but it comes with a few extra features:
 
 - Using the pattern parameter, you can define how the filename should be rewritten. This also allows you to employ [the "revving the filename"](http://www.stevesouders.com/blog/2008/08/23/revving-filenames-dont-use-querystring) technique, placing the timestamp as part of the filename itself, instead of in a query string on the end of the URL.
 - The absolute_url parameter gives you the option of an absolute URL (because let's face it, some of us just prefer absolute URLs). (Note: the absolute URL will be based on what you've set as the site URL in your EE configuration.)
-- Because cachebuster's output is only the URL, it can be used to rewrite the filename of any asset you need to cache-bust—CSS, JavaScript, images, JSON, whatever.
+- Because Cache Override's output is only the URL, it can be used to rewrite the filename of any asset you need to cache-bust—CSS, JavaScript, images, JSON, whatever.
 
 ## Parameters
 
@@ -28,7 +28,7 @@ cachebuster works a lot like EE's built-in {path} variable in that it outputs a 
 ### Basic Usage
 
 ```
-{exp:cachebuster path="assets/css/styles.min.css"}
+{exp:cache_override path="assets/css/styles.min.css"}
 ```
 
 Output:
@@ -39,7 +39,7 @@ assets/css/1420665809.styles.min.css
 ### Pattern parameter
 
 ```
-{exp:cachebuster path="/assets/css/styles.min.css" pattern="v-{t}.{f}.{e}"}
+{exp:cache_override path="/assets/css/styles.min.css" pattern="v-{t}.{f}.{e}"}
 ```
 
 Output:
@@ -50,7 +50,7 @@ assets/css/v-1420665809.styles.min.css
 ### Absolute URL Parameter
 
 ```
-{exp:cachebuster path="./assets/css/styles.min.css" absolute_url="true"}
+{exp:cache_override path="./assets/css/styles.min.css" absolute_url="true"}
 ```
 
 Output:
