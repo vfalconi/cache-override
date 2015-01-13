@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * cachebuster Class
+ * cache_override Class
  *
  * @package     ExpressionEngine
  * @category        Plugin
@@ -11,15 +11,15 @@
  */
 
 $plugin_info = array(
-	'pi_name'         => 'cachebuster',
+	'pi_name'         => 'cache_override',
 	'pi_version'      => '1.0',
 	'pi_author'       => 'Vince Falconi',
 	'pi_author_url'   => 'https://www.vincefalconi.com',
-	'pi_description'  => 'Cachebust an asset request by rewriting the filename to include a timestamp based on the file\'s last modified time.',
-	'pi_usage'        => cachebuster::usage()
+	'pi_description'  => 'Override (cache-bust) a cached asset request with a rewritten the filename including a timestamp based on the file\'s last modified time.',
+	'pi_usage'        => cache_override::usage()
 );
 
-class cachebuster
+class cache_override
 {
 
 	public $return_data = '';
@@ -27,7 +27,7 @@ class cachebuster
 	// --------------------------------------------------------------------
 
 	/**
-	 * cachebuster
+	 * cache_override
 	 *
 	 * @access  public
 	 * @return  string
@@ -106,7 +106,7 @@ class cachebuster
 		ob_start();  ?>
 
 
-See https://github.com/vfalconi/cachebuster
+See https://github.com/vfalconi/cache_override
 
 	<?php
 		$buffer = ob_get_contents();
@@ -116,5 +116,5 @@ See https://github.com/vfalconi/cachebuster
 	}
 	// END
 }
-/* End of file pi.crumbs.php */
-/* Location: ./system/expressionengine/third_party/crumbs/pi.crumbs.php */
+/* End of file pi.cache_override.php */
+/* Location: ./system/expressionengine/third_party/cache_override/pi.cache_override.php */
