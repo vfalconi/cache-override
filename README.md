@@ -21,7 +21,7 @@ Cache Override works a lot like EE's built-in {path} variable in that it outputs
     + `{f}` - filename (without extension)
     + `{e}` - extension (without preceding dot)
 
-- `absolute_url` &mdash; Default: `false`; if set to `true`, the output will be just like EE's own [`{path}` variable](https://ellislab.com/expressionengine/user-guide/templates/globals/path.html), but will include your timestamp and optional prepended string.
+- `absolute_url` &mdash; Default: `false`; if set to `true`, the output will be just like EE's own [`{path}` variable](https://ellislab.com/expressionengine/user-guide/templates/globals/path.html), but the filename will be altered according to the defined pattern.
 
 ## Examples
 
