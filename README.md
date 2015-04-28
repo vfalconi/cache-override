@@ -23,6 +23,8 @@ Cache Override works a lot like EE's built-in {path} variable in that it outputs
 
 - `absolute_url` &mdash; Default: `false`; if set to `true`, the output will be just like EE's own [`{path}` variable](https://ellislab.com/expressionengine/user-guide/templates/globals/path.html), but the filename will be altered according to the defined pattern.
 
+- `cdn` &mdash; Default: `null`; a CDN domain you want prepended to the cachebusted output.
+
 ## Examples
 
 ### Basic Usage
@@ -56,6 +58,17 @@ assets/css/v-1420665809.styles.min.css
 Output:
 ```html
 http://domain.tld/assets/css/1420665809.styles.min.css
+```
+
+### CDN
+
+```
+{exp:cache_override path="./assets/css/styles.min.css" cdn="https://awesome.cdn.com"}
+```
+
+Output:
+```
+https://awesome.cdn.com/assets/css/1420665809.styles.min.css
 ```
 
 ## Notes
