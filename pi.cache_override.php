@@ -56,7 +56,7 @@ class cache_override
 		$extension = trim($matches[0], '.');
 
 		// get the basename of the file
-		$basename = substr($file, 0, strlen($basename) - strlen($extension));
+		$basename = substr($file, 0, strlen($file) - strlen($extension));
 		$basename = trim($basename, '.');
 
 		// create the new filename using the supplied pattern
