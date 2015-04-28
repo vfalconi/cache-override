@@ -87,6 +87,12 @@ class cache_override
 			$path = ee()->functions->create_url($path);
 		}
 
+		// if a CDN URL is provided, use it
+		if (null !== ee()->TMPL->fetch_param('cdn'))
+		{
+			$path = ee()->TMPL->fetch_param('cdn') . $path;
+		}
+
 		$this->return_data = $path;
 		
 	}
